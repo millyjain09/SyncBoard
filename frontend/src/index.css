@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.55);
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up-fade 0.18s ease-out forwards;
+}
+
+/* Concept-level CSS custom properties */
+[data-concept='linear-minimal'] {
+  --mv-bg: #fafafb;
+  --mv-surface: #ffffff;
+  --mv-surface-alt: #f4f5f7;
+  --mv-border: #e6e8ec;
+  --mv-text: #111827;
+  --mv-muted: #6b7280;
+  --mv-accent: #5e6ad2;
+  --mv-accent-fg: #ffffff;
+}
+
+[data-concept='dev-command'] {
+  --mv-bg: #090b10;
+  --mv-surface: #111520;
+  --mv-surface-alt: #171c2b;
+  --mv-border: #23293b;
+  --mv-text: #f1f5f9;
+  --mv-muted: #94a3b8;
+  --mv-accent: #3b82f6;
+  --mv-accent-fg: #ffffff;
+}
+
+[data-concept='human-workspace'] {
+  --mv-bg: #faf7f2;
+  --mv-surface: #ffffff;
+  --mv-surface-alt: #f2ede4;
+  --mv-border: #e7dfd3;
+  --mv-text: #292524;
+  --mv-muted: #78716c;
+  --mv-accent: #c2590a;
+  --mv-accent-fg: #ffffff;
+}
+
+[data-concept='enterprise-exec'] {
+  --mv-bg: #f5f7fa;
+  --mv-surface: #ffffff;
+  --mv-surface-alt: #eef2f7;
+  --mv-border: #d5dde7;
+  --mv-text: #0f172a;
+  --mv-muted: #475569;
+  --mv-accent: #1d4ed8;
+  --mv-accent-fg: #ffffff;
+}
+
+[data-concept='creative-studio'] {
+  --mv-bg: #f8f9fc;
+  --mv-surface: #ffffff;
+  --mv-surface-alt: #f1f3f9;
+  --mv-border: #e2e6f0;
+  --mv-text: #18181b;
+  --mv-muted: #52525b;
+  --mv-accent: #e11d48;
+  --mv-accent-fg: #ffffff;
+}
+
